@@ -1,0 +1,103 @@
+ html {
+	height: 100%;
+	font-family: sans-serif;
+	padding: 1%;
+	margin: 0%;
+	background-color: black;
+}
+
+body {
+	height: 100%;
+	background-color: #eee;
+	margin: 0%;
+	padding: 2%;
+}
+
+#buttons {
+	width: 40%;  /* orig: 70 */
+	height: 60%;
+	float: left;
+	margin-right: 0;
+}
+
+
+#meters {
+	width: 15%;
+	height: 60%;
+	float: left;	
+	margin-left: 0;
+	
+}
+
+#progs{
+	
+	width: 40%;
+	height: 60%;
+	float: left;
+}
+
+svg{
+	padding: 0 10% 0 0%;
+	height: 24%;
+	margin-bottom: 1%;
+}
+
+button {
+	width: 49%;
+	height: 24%;
+	margin-bottom: 1%;
+}
+
+#on_off{
+	width: 99%;
+}
+
+#h_conn{
+	color: red;
+	
+}
+
+#prName{
+	padding-left: 10%;
+}
+
+#prDur{	
+	padding-left: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+	
+	#buttons {
+		width: 70%;
+	}
+	
+	#meters{
+		width: 25%;		
+	}
+	
+	#progs{
+		width: 70%;
+		float: none;
+	}
+	
+	
+
+	
+
+} 
+
+@media only screen and (min-width: 600px) {
+	
+
+}
+ 
+@media only screen and (min-width: 1200px) {
+	body {
+		width: 75em;
+		margin: auto;
+		height: 100%;
+	}
+	
+} 
+
+

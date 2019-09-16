@@ -1,0 +1,20 @@
+{
+"name":"jiggle",
+"totalLength":"",  
+"difficultyLevel":"demo",
+"params": [
+	"setDemSpeedInc",5,
+	"setDemSpeedInc",5,
+	"setDir",2,
+	"setDir",2,
+	"setDir",2,
+	"setDir",2,
+	"setDir",2,
+	"setAngleInc",1,
+	"setDir",2,
+	"setDir",2,
+	"setDir",2,
+	"setDir",2,
+	"setDir",2	
+	]
+}

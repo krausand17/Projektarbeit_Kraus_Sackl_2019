@@ -1,0 +1,12 @@
+{
+"name":"erstes",
+"totalLength":"",  
+"difficultyLevel":"demo",
+"params": [
+	"setDemSpeedInc",5,
+	"setDir",5,
+	"setDir",5,
+	"setAngleInc",10,	
+	"setDir",10
+	]
+}

@@ -1,0 +1,95 @@
+ html {
+	height: 100%;
+	font-family: sans-serif;
+	padding: 1%;
+	margin: 0%;
+	background-color: black;
+}
+
+body {
+	height: 100%;
+	background-color: #eee;
+	margin: 0%;
+	padding: 2%;
+}
+
+#labels {
+	
+	width: 20%;
+	height: 60%;
+	float: left;	
+	margin-left: 0;
+}
+
+
+#meters {
+	width: 20%;
+	height: 60%;
+	float: left;	
+	margin-left: 0;
+	
+}
+
+
+
+svg{
+	padding: 0 0% 0 0%;
+	height: 40%;
+	margin-bottom: 1%;
+	border: 2px solid black;
+}
+
+.svgtxt {
+	height: 20%;
+}
+
+#on_off{
+	width: 99%;
+}
+
+#h_conn{
+	color: red;	
+}
+
+
+
+@media only screen and (max-width: 600px) {
+	
+	#labels {
+		width: 50%;
+		min-width: 8em;
+		float: left;
+	}
+	
+	#meters{
+		width: 50%;	
+		min-width: 10em;
+	}
+	
+
+	
+
+} 
+
+@media only screen and (min-width: 600px) {
+	
+	#labels {
+		width: 30%;
+	}
+	
+	#meters{
+		width: 30%;		
+	}
+	
+}
+ 
+@media only screen and (min-width: 1200px) {
+	body {
+		width: 75em;
+		margin: auto;
+		height: 100%;
+	}
+	
+} 
+
+

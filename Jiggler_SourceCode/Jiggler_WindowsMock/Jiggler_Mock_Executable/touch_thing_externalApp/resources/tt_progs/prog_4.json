@@ -1,0 +1,22 @@
+{
+"name":"garble",
+"totalLength":"",  
+"difficultyLevel":"wurscht",
+"params": [
+	"setDemSpeedInc",1,
+	"setDemSpeedInc",1,
+	"setAngleInc",5,
+	"setDemSpeedInc",3,
+	"setDemSpeedInc",3,
+	"setDemSpeedInc",3,
+	"setDemSpeedDec",5,
+	"setDemSpeedInc",3,
+	"setDemSpeedInc",3,
+	"setDemSpeedDec",5,
+	"setDemSpeedInc",3,
+	"setDemSpeedInc",3,
+	"setDemSpeedDec",5,
+	"setDir",5,
+	"setDir",5	
+	]
+}

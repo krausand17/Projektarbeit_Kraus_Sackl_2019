@@ -1,0 +1,18 @@
+{
+"name":"ufo",
+"totalLength":"",  
+"difficultyLevel":"wurscht",
+"params": [
+	"setDemSpeedInc",1,
+	"setDemSpeedInc",1,
+	"setDemSpeedInc",1,
+	"setAngleInc",0,
+	"setAngleInc",5,
+	"setAngleDec",0,
+	"setAngleDec",2,
+	"setAngleDec",0,
+	"setAngleDec",5,	
+	"setAngleInc",0,	
+	"setAngleInc",1	
+	]
+}

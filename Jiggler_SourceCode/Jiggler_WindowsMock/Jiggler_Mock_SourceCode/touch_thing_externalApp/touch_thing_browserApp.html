@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Project_Display_Test</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="./styles/touch_thing.css">		
+		<script type="text/javascript" src="./js/touch_thing_display.js"></script>	
+		<script type="text/javascript" src="./js/touch_thing_socket_client.js"></script>	
+		<script type="text/javascript" src="./js/touch_thing_manager.js"></script>	
+	</head>
+	
+	<body>	
+		
+		<div id="buttons">		
+			<button id="on_off" onclick="javascript: setOnOff();">On/Off</button>
+			
+			<button id="speedDec" onclick="javascript: setDevSpeed('dec');">Dec_Speed</button>
+			<button id="speedInc" onclick="javascript: setDevSpeed('inc');">Inc_Speed</button>
+			
+			<button id="angleDec" onclick="javascript: setDevAngle('dec');">Dec_Angle</button>
+			<button id="angleInc" onclick="javascript: setDevAngle('inc');">Inc_Angle</button>			
+			
+			<button id="changeDir" onclick="javascript: setDevDir();">Change_Dir</button>			
+			<button id="conn" onclick="javascript: connectButton();">Connect</button>			
+		</div>
+		
+		<div id="meters">	
+
+
+			<svg width="100%" viewBox="0 0 250 250">	
+				<defs>
+					<radialGradient id="grad1">
+						<stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+						<stop offset="50%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+						<stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+					</radialGradient>
+				</defs>	
+				
+				<circle r="30" cx="125" cy="125" fill="black" stroke="grey" stroke-width="3" />
+				<circle id="pwr_light" r="0" cx="125" cy="125" fill="url(#grad1)" />
+			</svg>		
+		
+			<svg width="100%" viewBox="0 0 250 250">		
+				<circle r="115" cx="125" cy="125" fill="black" stroke="grey" stroke-width="5" />
+				<line x1="125" y1="125" x2="50" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+				<line x1="125" y1="125" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />				
+				<line id="needle" transform="rotate(45 125 125)" x1="125" y1="125" x2="125" y2="230" style="stroke:rgb(0,255,0);stroke-width:3" />	
+				<circle r="5" cx="125" cy="125" fill="grey"/>
+				
+				<line transform="rotate(45 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(72 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(99 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(126 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(153 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(180 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(207 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(234 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(261 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(288 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(315 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				
+				<text id="speed_nr" x="118" y="190" fill="grey" font-size="24px">0</text>			
+			</svg>		
+		
+			<svg width="100%" viewBox="0 0 250 250">		
+				<circle r="115" cx="125" cy="125" fill="black" stroke="grey" stroke-width="5" />
+				<line transform="rotate(150 125 125)" x1="125" y1="125" x2="125" y2="232" style="stroke:rgb(255,0,0);stroke-width:2" />	
+				<line transform="rotate(210 125 125)" x1="125" y1="125" x2="125" y2="232" style="stroke:rgb(255,0,0);stroke-width:2" />	
+				
+				<g id="angleMeter" transform="rotate(0 125 125)">
+				<line x1="125" y1="125" x2="125" y2="20" style="stroke:rgb(0,255,0);stroke-width:3" />	
+				<line x1="95" y1="125" x2="155" y2="125" style="stroke:rgb(0,255,0);stroke-width:3" />	
+				</g>
+				<line x1="110" y1="130" x2="140" y2="130" style="stroke:grey;stroke-width:2" />
+				
+				<circle r="5" cx="125" cy="125" fill="grey"/>
+				
+				<line transform="rotate(150 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(160 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(170 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(180 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(190 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(200 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				<line transform="rotate(210 125 125)" x1="125" y1="236" x2="125" y2="242" style="stroke:grey;stroke-width:3" />	
+				
+				<text id="angle_nr" x="118" y="190" fill="grey" font-size="24px">0</text>
+			</svg>	
+			
+			<svg width="100%" viewBox="0 0 250 250">		
+				
+				<text id="h_conn" x="5" y="145" fill="red" font-size="38px">Disconnected</text>			
+			</svg>		
+			<!-- <p id="h_conn">Disconnected</p> -->
+		</div>
+			
+		<div id="progs">
+			<button id="1" onclick="javascript: setProg('prog_1');">Prog 1</button>			
+			<button id="2" onclick="javascript: setProg('prog_2');">Prog 2</button>
+			<button id="3" onclick="javascript: setProg('prog_3');">Prog 3</button>			
+			<button id="4" onclick="javascript: setProg('prog_4');">Prog 4</button>
+			
+			<button id="5" onclick="javascript: startWorker();">Start Program</button>			
+			<button id="6" onclick="javascript: stopWorker();">Stop Program</button>
+			
+			<p id="prName">Program Name:</p>
+			<p id="prDur">Program Duration:</p>
+		</div>
+		
+	<body>
+</html>
+

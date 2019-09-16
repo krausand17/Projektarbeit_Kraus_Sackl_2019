@@ -1,0 +1,187 @@
+#:kivy 1.11.0
+
+ScreenManager:
+    MainScreen:
+    MenuScreen:
+
+<FmtBtn@Button>:
+	text_size: self.size
+	font_size: '25sp'
+	halign: 'center'
+	valign: 'center'
+
+<scrnLbl@Label>:
+	size_hint_y: 0.3
+	text_size: self.size
+	font_size: '25sp'
+	halign: 'center'
+	valign: 'center'
+	
+<MainScreen>:
+	name: 'main_screen'
+	pwrButton: pwrButton
+	dirLabel: dirLabel
+	speedLabel: speedLabel
+	angleLabel: angleLabel
+	runningLabel: runningLabel
+	
+    BoxLayout:
+        orientation: 'horizontal'
+        size: root.size
+        spacing: 5
+
+		BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+			
+			FmtBtn:
+				id: pwrButton
+				text: "ON/OFF"			
+				on_release: app.button_on_off()
+				
+
+			scrnLbl:
+				id: dirLabel
+				text: 'Direction: LEFT'
+				
+			FmtBtn:
+				text: "Change\nDirection"
+				on_release: app.changeDir()
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+
+            FmtBtn:
+                text: 'Faster'
+                on_release: app.faster()
+				
+			scrnLbl:
+				id: speedLabel
+				text: 'Speed: 0'
+
+            FmtBtn:
+                text: 'Slower'
+                on_release: app.slower()
+				
+		
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+
+            FmtBtn:
+                text: 'Increase\nAngle'
+                on_release: app.angleInc()
+				
+			scrnLbl:
+				id: angleLabel
+				text: 'Angle: 0'
+
+            FmtBtn:
+                text: 'Decrease\nAngle'
+                on_release: app.angleDec()
+
+
+		BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+
+            FmtBtn:
+				text: 'Quit'
+				on_release: app.quit()
+				
+			scrnLbl:
+				id: runningLabel
+				text: ''
+
+
+            FmtBtn:
+                text: 'Menu'
+                on_release: app.root.current = 'menu_screen'		
+				
+<MenuScreen>:
+
+	name: 'menu_screen'
+	selPrLabel: selPrLabel
+	prNameLabel: prNameLabel
+	prDurLabel: prDurLabel
+	wsLabel: wsLabel
+	
+    BoxLayout:
+        orientation: 'horizontal'
+        size: root.size
+        spacing: 5
+
+		BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+			
+			FmtBtn:
+				text: "prog_1"			
+				on_release: app.select_prog("prog_1")
+
+			scrnLbl:
+				id: selPrLabel
+				text: 'Selected: '
+				
+			FmtBtn:
+				text: "prog_2"			
+				on_release: app.select_prog("prog_2")
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+
+            FmtBtn:
+                text: "prog_3"			
+				on_release: app.select_prog("prog_3")
+
+			scrnLbl:
+				id: prNameLabel
+				text: ''			
+
+            FmtBtn:
+                text: "prog_4"			
+				on_release: app.select_prog("prog_4")
+				
+		
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+
+            FmtBtn:
+                text: 'Run Program'
+                on_release: app.run_prog()
+				
+			scrnLbl:
+				id: prDurLabel
+				text: ''
+
+            FmtBtn:
+                text: 'Stop Program'
+                on_release: app.stop_prog()
+
+
+		BoxLayout:
+            orientation: 'vertical'
+            spacing: 5
+
+            FmtBtn:
+				text: 'return to main screen'
+				on_release: app.root.current = 'main_screen'
+				
+			scrnLbl:
+				id: wsLabel
+				text: ''
+
+            ToggleButton:
+                text: 'Websocket\nServer'
+                on_release: app.connectExt()	
+				text_size: self.size
+				font_size: '25sp'
+				halign: 'center'
+				valign: 'center'
+
+
+
+
