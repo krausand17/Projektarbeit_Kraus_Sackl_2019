@@ -8,7 +8,7 @@
 
 body {
 	height: 100%;
-	background-color: #eee;
+	background-color: #b0C4de;
 	margin: 0%;
 	padding: 2%;
 }
@@ -34,6 +34,7 @@ body {
 	width: 40%;
 	height: 60%;
 	float: left;
+
 }
 
 svg{
@@ -46,17 +47,40 @@ button {
 	width: 49%;
 	height: 24%;
 	margin-bottom: 1%;
+	background-color: #708090;
+	border-radius: 10px;
+	border-style: double;
+
+	
+	
+}
+
+#progs > button {
+	font-size: 130%;
+}
+
+
+button:hover {
+	background-color: #778899;
 }
 
 #on_off{
 	width: 99%;
+	font-size: 200%;
+
 }
 
-#h_conn{
-	color: red;
+#buttons > button{
+	font-size: 130%;
 	
 }
 
+
+#h_conn{
+	font-size: 130%;
+	color: red;
+	
+}
 #prName{
 	padding-left: 10%;
 }
@@ -69,6 +93,7 @@ button {
 	
 	#buttons {
 		width: 70%;
+		font-size: 100%;
 	}
 	
 	#meters{
